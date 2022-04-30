@@ -1,22 +1,22 @@
-import { Flex, Circle, Box, Badge, useColorModeValue, Icon, chakra, Tooltip } from '@chakra-ui/react';
+import { Flex, Circle, Box, Badge, useColorModeValue} from '@chakra-ui/react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-const data = {
-	isNew: true,
-	imageURL:
-		'https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=4600&q=80',
-	name: 'Wayfarer Classic',
-	price: 4.5,
-	rating: 4.2,
-	numReviews: 34
-};
+// const data = {
+// 	isNew: true,
+// 	imageURL:
+// 		'https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=4600&q=80',
+// 	name: 'Wayfarer Classic',
+// 	price: 4.5,
+// 	rating: 4.2,
+// 	numReviews: 34
+// };
 
 interface RatingProps {
 	rating: number;
 	numReviews: number;
 }
 
-function Rating({ rating, numReviews }: RatingProps) {
+function Rating({  numReviews }: RatingProps) {
 	return (
 		<Box d='flex' alignItems='center'>
 			{/* {Array(5).fill('').map((_, i) => {

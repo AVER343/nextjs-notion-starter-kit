@@ -1,5 +1,4 @@
 import { CircularProgress } from '@chakra-ui/react';
-import { ReactNode } from 'react';
 
 export function IsLoadingComponent({ isLoading, children }) {
 	if (isLoading) {

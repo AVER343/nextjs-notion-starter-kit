@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SimpleGrid, Text, Box, Center, HStack, Flex } from '@chakra-ui/react';
+import { SimpleGrid, Text, Box} from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { BASE_URL } from '../../constants/url';
 import Cards from '../../components/card';

@@ -1,6 +1,6 @@
-import { Box, Center, HStack, SimpleGrid } from '@chakra-ui/react';
+import { Box, Center, HStack } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { motion, useViewportScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { BreadCrumbComponent } from '../../../components/breadcrumb';
 function LevelPage() {

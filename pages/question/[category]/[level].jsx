@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 const SurveyComponent = dynamic(() => import('../../../components/SurveyComponent'), {
 	ssr: false
@@ -7,7 +7,7 @@ const SurveyComponent = dynamic(() => import('../../../components/SurveyComponen
 const Survey = () => {
 	return <SurveyComponent />;
 };
-export async function getServerSideProps(context:any) {
+export async function getServerSideProps(context) {
 	return {
 		props: {}
 	};
