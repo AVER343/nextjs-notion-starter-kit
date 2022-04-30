@@ -12,16 +12,16 @@ export interface ICategory {
 	flags: any[];
 }
 
-function QuestionsPage(props: any) {
-	let [ categories, setCategories ] = useState<ICategory[]>([]);
-	let [ page, setPage ] = useState(0);
-	let breadcrumbs = [
+function QuestionsPage() {
+	const [ categories, setCategories ] = useState<ICategory[]>([]);
+	const [ page ] = useState(0);
+	const breadcrumbs = [
 		{
 			href: '/questions',
 			title: 'Category'
 		}
 	];
-	let router = useRouter();
+	const router = useRouter();
 	useEffect(
 		() => {
 			fetch(`${BASE_URL}/question/categories`)
@@ -59,7 +59,7 @@ function QuestionsPage(props: any) {
 		</React.Fragment>
 	);
 }
-export async function getServerSideProps(context:any) {
+export async function getServerSideProps() {
 	return {
 		props: { questions: [] } // will be passed to the page component as props
 	};

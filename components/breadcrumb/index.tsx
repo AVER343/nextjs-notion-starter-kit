@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import React from 'react';
 export function BreadCrumbComponent(props: { breadcrumbs: { href: string; title: string }[] }) {
 	const router = useRouter();
 	return (

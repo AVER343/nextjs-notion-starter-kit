@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { BreadCrumbComponent } from '../../../components/breadcrumb';
 function LevelPage() {
-	let router = useRouter();
-	let { _category } = router.query;
-	let [ levels, setLevel ] = useState<{ [id: string]: any }>({ EASY: 'green', MEDIUM: 'orange', HARD: 'red' });
+	const router = useRouter();
+	const { _category } = router.query;
+	const [ levels ] = useState<{ [id: string]: any }>({ EASY: 'green', MEDIUM: 'orange', HARD: 'red' });
 	return (
 		<Box>
 			<BreadCrumbComponent
@@ -40,7 +40,7 @@ function LevelPage() {
 		</Box>
 	);
 }
-export async function getServerSideProps(context:any) {
+export async function getServerSideProps() {
 	return {
 		props: {}
 	};

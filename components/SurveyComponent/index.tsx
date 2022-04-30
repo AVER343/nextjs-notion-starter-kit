@@ -1,15 +1,13 @@
 // components/survey/index.tsx
 
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Survey, Model, StylesManager } from 'survey-react'; // import surveyjs
 import 'survey-react/modern.min.css';
 import { useRouter } from 'next/router';
-import { send } from 'process';
 import { BASE_URL } from '../../constants/url';
 import { SurveyModel } from '../../models/Survey';
-import { Box, Center, CircularProgress, Skeleton, Spinner } from '@chakra-ui/react';
 import { IsLoadingComponent } from '../isLoading';
-import { Level, IReport } from 'interfaces/reports';
+import { Level } from 'interfaces/reports';
 export interface Element {
 	html: string;
 	type: string;
@@ -39,10 +37,10 @@ export interface RootObject {
 }
 
 const SurveyComponent = () => {
-	let router = useRouter();
-	let { category, level } = router.query;
-	let [ isLoading, setIsLoading ] = useState(true);
-	let [ survey, setSurvey ] = useState<Model>(new Model({}));
+	const router = useRouter();
+	const { category, level } = router.query;
+	const [ isLoading, setIsLoading ] = useState(true);
+	const [ survey, setSurvey ] = useState<Model>(new Model({}));
 
 	if (typeof window != 'undefined') {
 		StylesManager.applyTheme('modern');
@@ -57,7 +55,7 @@ const SurveyComponent = () => {
 				})
 				.then((e) => e.map((e: any) => e['Question_id']))
 				.then((e: RootObject[]) => {
-					let pages = [
+					const pages = [
 						{
 							elements: [
 								{
@@ -69,7 +67,7 @@ const SurveyComponent = () => {
 					];
 					e.map((e) => e.options.pages.map((e) => pages.push({ elements: e.elements })));
 					pages.push();
-					let model = new SurveyModel({
+					const model = new SurveyModel({
 						title: (!Array.isArray(category) && category) || '',
 						level: (e[0] && e[0].level) || Level.EASY,
 						pages,
